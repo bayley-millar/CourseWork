@@ -1,0 +1,284 @@
+/**Used this for practicing for the second practicl test.
+ * @author Bayley Millar
+ */
+public class Check{
+    
+    public static boolean rowLengthsDecrease(int[][]t){
+        int currentRow = 0;
+        int nextRow = 0;
+        for(int row = 0;i < t.length-1;row++){
+            currentRow = t[row].length;
+            nextRow = t[row+1].length;
+            if(currentRow < nextRow){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static rowValuesIncrease(int[][]t){
+        int currentNum = 0;
+        int nextNum = 0;
+        for(int row = 0;row < t.length;row++){
+            for(int col = 0;row < t[row].length-1;col++){
+                currentNum = t[row][col];
+                nextNum = t[row][col+1];
+                if(nextNum < currentNum){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static columnValuesIncrease(int[][]t){
+        int currentNum = 0;
+        int nextNum = 0;
+        for(int col = 0;col<t[0].length;col++){
+            for(int row = 0;row < t.length-1;col++){
+                if(t[row+1].length-1 <= col){
+                    continue;
+                }
+                currentNum = t[row][col];
+                nextNum = t[row+1][col];
+                if(nextNum<currentNum){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static isSetOf1toN(int[][]t){
+        int totalLength = 0;
+        for(int row = 0; row < t.length;row++){
+            totalLength+=t[row].length;
+        }
+        for(int n = 1;n<totalLength;n++){
+            boolean found = false;
+            for(int row=0;row < t.length;row++){
+                for(int col=0;col<t[row].length;col++){
+                    if(t[row][col]==n){
+                        found = true;
+                    }
+                }
+            }
+            if(!found){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static rowLengthsDecrease(int[][]t){
+        int currentRow = 0;
+        int nextRow = 0;
+        for(int row = 0; row < t.length-1;row++){
+            currentRow = t[row];
+            nextRow = t[row+1];
+            if(currentRow < nextRow){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static rowValuesIncrease(int[][]t){
+        int currentNum=0;
+        int nextNum=0;
+        for(int row = 0;row < t.length; row++){
+            for(int col = 0;col < t[row].length-1;col++){
+                currentNum = t[row][col];
+                nextNum = t[row][col+1];
+                if(currentNum > nextNum){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static columnValuesIncrease(int[][]t){
+        int currentNum = 0;
+        int nextNum = 0;
+        for(int col = 0;col < t[0].length;col++){
+            for(int row = 0;row < t.length-1;row++){
+                if(t[row+1].length <=col){
+                    continue;
+                }
+                currentNum = t[row][col];
+                nextNum = t[row+1][col];
+                if(currentNum > nextNum){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+    public static isSetOf1toN(int[][]t){
+        int totalLength = 0;
+        for(int row = 0;row < t.length;row++){
+            totalLength += t.[row]length;
+        }
+        for(int n = 1; n < totalLength;n++){
+            boolean found = false;
+            for(int row = 0;row < t.length; row++){
+                for(int col = 0;col < t[row].length;col++){
+                    if(t[row][col]== n){
+                        found = true;
+                    }
+                }
+            }
+            if(!found){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static rowLengthsDecrease(int[][]t){
+        int currentRow = 0;
+        int nextRow = 0;
+        for(int row = 0;row < t.length-1; row++){
+            currentRow = t[row].length;
+            nextRow = t[row+1].length;
+            if(nextRow > currentRow){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static rowValuesIncrease(int[][]t){
+        int currentNum = 0;
+        int nextRow = 0;
+        for(int row = 0; row < t.length;row++){
+            for(int col = 0;col < t[row].length-1;col++){
+                currentNum = t[row][col];
+                nextRow = t[row][col+1];
+                if(currentNum > nextRow){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static columnValuesIncrease(int[][]t){
+        int currentNum = 0;
+        int nextNum = 0;
+        for(int col = 0; col < t[0].length;col++){
+            for(int row = 0; row < t.length-1;row++){
+                if(t[row+1].length <= col){
+                    continue;
+                }
+                currentNum = t[row][col];
+                nextNum = t[row+1][col];
+                if(currentNum > nextNum){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static isSetOf1toN(int[][]t){
+        int totalLength = 0;
+        for(int row = 0;row < t.length;row++){
+            totalLength += t[row].length;
+        }
+        for(int n=1;n < totalLength;n++){
+            boolean found = false;
+            for(int row = 0;row<t.length;row++){
+                for(int col = 0; col<t[row].length;col++){
+                    if(t[row][col] == n){
+                        found = true;
+                    }
+                }
+            }
+            if(!found){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+
+
+
+
+    protected integer addToRow(Cell curr, int value){
+        int prevValue;
+        Cell cellA;
+        while(curr.right!=null && value > curr.value){
+            curr = curr.right;
+        }
+        if(value < curr.value){
+            prevValue = curr.value;
+            curr.value = value;
+            return prevValue;
+        }
+        if(curr.right==null&&value > curr.value){
+            cellA = new Cell(value);
+            curr.right = cellA;
+            cellA.left = curr;
+            if(curr.above != null && curr.above.right != null){
+                cellA.above = curr.above.right;
+                cellA.above.below = cellA;
+            }
+            return null;
+        }
+        return null;
+    }
+
+    
+
+    protected integer addToRow(Cell curr, int value){
+        int prevValue;
+        Cell cellA;
+        while(curr.right!=null && value > curr.value){
+            curr = curr.right;
+        }
+        if(value < curr.value){
+            prevValue = curr.value;
+            curr.value = value;
+            return prevValue;
+        }
+        if(value > curr.value && curr.right!=null){
+            cellA = new Cell(value);
+            curr.right = cellA;
+            cellA.left = curr;
+            if(curr.above !=null && curr.above.right !=null){
+                cellA.above = curr.above.right;
+                cellA.above.below = cellA;
+            }
+            return null;
+        }
+        return null;
+    }
+
+    protected integer addToRow(Cell curr, int value){
+        int prevValue;
+        Cell cellA;
+        while(curr.right!=null && value > curr.value){
+            curr = curr.right;
+        }
+        if(value < curr.value){
+            prevValue = curr.value;
+            curr.value = value;
+            return prevValue;
+        }
+        if(curr.right!=null && 
+    }
+
+    protected integer addToRow(Cell curr, int value){
+
+    }
+
+
+                
+}//end class

@@ -1,0 +1,23 @@
+Hi.java:9: error: class hi is public, should be declared in a file named hi.java public class hi{ ^ 1 error
+
+Hi.java:11: error: ')' expected System.out.println(hello, world!");
+
+Hi.java:11: error: unclosed string literal System.out.println(hello, world!");
+
+Hi.java:11: error: ';' expected System.out.println(hello, world!");
+
+Hi.java:13: error: reached end of file while parsing }// end of class ^ 4 errors
+
+Hi.java:11: error: unclosed string literal System.out.println("hello, world!);
+
+Hi.java:11: error: ';' expected System.out.println("hello, world!);
+
+Hi.java:13: error: reached end of file while parsing }// end of class ^ 3 errors
+
+Error: Main method not found in class Hi, please define the main method as: public static void main(String[] args) or a JavaFX application class must extend javafx.application.Application
+
+Hi.java:1: error: class, interface, or enum expected +/** Hi.java ^ 1 error
+
+Hi.java:12: error: reached end of file while parsing } // end of main method ^ 2 errors
+
+

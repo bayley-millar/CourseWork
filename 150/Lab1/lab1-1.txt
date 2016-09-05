@@ -1,0 +1,42 @@
+Python 2.7.5 (default, Aug 25 2013, 00:04:04) 
+[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> ================================ RESTART ================================
+>>> 
+hello
+>>> ================================ RESTART ================================
+>>> 
+
+Traceback (most recent call last):
+  File "/home/cshome/b/bmillar/COMP150/Lab1/hello.py", line 1, in <module>
+    print cheese
+NameError: name 'cheese' is not defined
+>>> 1 2
+SyntaxError: invalid syntax
+>>> print bayley
+
+Traceback (most recent call last):
+  File "<pyshell#1>", line 1, in <module>
+    print bayley
+NameError: name 'bayley' is not defined
+>>> 1*2 8
+SyntaxError: invalid syntax
+>>> bayley
+
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    bayley
+NameError: name 'bayley' is not defined
+>>> "this is a test..."
+'this is a test...'
+>>> ================================ RESTART ================================
+>>> 
+>>> ================================ RESTART ================================
+>>> 
+>>> ================================ RESTART ================================
+>>> 
+this is a test
+>>> 
+>>> 5%2
+1
+>>> 

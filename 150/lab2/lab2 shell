@@ -1,0 +1,137 @@
+Python 2.7.5 (default, Aug 25 2013, 00:04:04) 
+[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> n=7
+>>> 7=n
+SyntaxError: can't assign to literal
+>>> n=5+2
+>>> n=5+n
+>>> n+5=n
+SyntaxError: can't assign to operator
+>>> y=n
+>>> 
+>>> 
+>>> 
+>>> print n
+12
+>>> print n+5
+17
+>>> print n+5+2
+19
+>>> n=5
+>>> print7+5
+
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    print7+5
+NameError: name 'print7' is not defined
+>>> print 7+5
+12
+>>> print n , 7+5 , n+7
+5 12 12
+>>> ================================ RESTART ================================
+>>> 
+4
+n is 2
+>>> ================================ RESTART ================================
+>>> 
+4
+n is 2
+n is 4
+>>> n is 4
+True
+>>> 
+>>> 
+>>> 
+>>> j=jack
+
+Traceback (most recent call last):
+  File "<pyshell#20>", line 1, in <module>
+    j=jack
+NameError: name 'jack' is not defined
+>>> j= jack
+
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    j= jack
+NameError: name 'jack' is not defined
+>>> j= "jack"
+>>> i= "is"
+>>> a= "a"
+>>> d= "dull"
+>>> b= "boy"
+>>> print= j , i , a , d , b
+SyntaxError: invalid syntax
+>>> 
+KeyboardInterrupt
+>>>  print j , i , a , d , b
+ 
+  File "<pyshell#28>", line 1
+    print j , i , a , d , b
+   ^
+IndentationError: unexpected indent
+>>> print j , i , a , d , b
+jack is a dull boy
+>>> ================================ RESTART ================================
+>>> 
+jack is a dull boy
+>>> 
+>>> 
+>>> 6*1-2
+4
+>>> 6*1-2-10
+-6
+>>> 5%2
+1
+>>> 9%5
+4
+>>> 15%5
+0
+>>> 15%12
+3
+>>> 12%15
+12
+>>> 6%6
+0
+>>> 0%7
+0
+>>> 7%0
+
+Traceback (most recent call last):
+  File "<pyshell#41>", line 1, in <module>
+    7%0
+ZeroDivisionError: integer division or modulo by zero
+>>> 
+>>> 
+>>> 
+>>> 
+>>> bruce=6
+>>> bruce + 4
+10
+>>> 
+>>> 
+>>> x= 1080
+>>> xrounded= 80
+>>> x - xrounded
+1000
+>>> 
+>>> 
+>>> 1080%100
+80
+>>> 1080%80
+40
+>>> 1080%1000
+80
+>>> 1080%10
+0
+>>> 1080%1
+0
+>>> 1080%100000
+1080
+>>> 1080%100080
+1080
+>>> 1080%10080
+1080
+>>> 1080%1020
+60
+>>> 

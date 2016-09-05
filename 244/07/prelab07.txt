@@ -1,0 +1,36 @@
+1.An InputStreamReader is a bridge from byte streams to character streams:
+It reads bytes and decodes them into characters using a specified charset.
+The charset that it uses may be specified by name or may be given explicitly,
+or the platform's default charset may be accepted.
+
+2.To enable the efficient conversion of bytes to characters, more bytes may
+be read ahead from the underlying stream than are necessary to satisfy the
+current read operation.
+
+3.read(), returns:  A String containing the contents of the line, not
+including any line-termination characters, or null if the end of the stream
+has been reached
+
+4.Prints a String and then terminates the line. This method behaves as though it
+invokes print(String) and then println().
+
+5.Creates a server socket, bound to the specified port. A port number of 0 means
+that the port number is automatically allocated, typically from an ephemeral
+port range. This port number can then be retrieved by calling getLocalPort.
+
+6.Listens for a connection to be made to this socket and accepts it. The
+method blocks until a connection is made.returns the new socket
+
+7.public Socket(InetAddress address,int port)
+
+8.an input stream for reading bytes from this socket.
+
+9.public OutputStream getOutputStream()
+
+10.a Date object
+new Date()
+
+11. Sys.out.println(new Date());
+
+12. Port is required
+Host is optional

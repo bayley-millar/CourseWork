@@ -1,0 +1,8 @@
+The answers for lab 05 for strings:
+
+(a):more flexible
+(b):char literal (char *wordlist)
+(c):because of the termination \0
+(d):Not allowed to that. Have to copy it
+(e):It is normally used to set a width?
+(f):do -> cats -> eat -> bats

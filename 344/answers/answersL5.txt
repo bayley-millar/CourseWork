@@ -1,0 +1,7 @@
+19.select snum,sname from salespeople outer where 1 <(select count(*) from customers inner where outer.snum=inner.snum);
+
+20.
+
+21.select fname,lname from employee where not exists(select * from dependent where ssn=essn);
+
+22.

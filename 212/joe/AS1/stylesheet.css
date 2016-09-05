@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+#page {
+    font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+#header {
+    background-image: url(images/nightline.jpg);
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #FFF;
+}
+#header h1 {
+    position: absolute;
+    top: 100px;
+    margin-top: 0px;
+    text-align: center;
+    font-family: "Veranda", Arial, sans-serif;
+    font-size: 80px;
+    text-transform: uppercase;
+    width: 100%;
+    height: 200px;
+    color: white;
+}
+#header p {
+    position: absolute;
+    top: 155px;
+    margin-top: 0px;
+    text-align: center;
+    font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    width: 100%;
+    color: white;
+}
+#header #nav {
+    position: absolute;
+    top: 250px;
+    font-family: "proxima-nova", Arial, "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    width: 100%;
+}
+#header #nav ul {
+    list-style-type: none;
+    margin: 20px 0 0;
+}
+#header #nav ul li {
+    display: inline;
+    margin-right: 18px;
+    padding: 3px 7px 2px;
+}
+#header #nav ul .curPage {
+    border: 1px solid #FFF;
+}
+#header #nav ul a {
+    text-decoration: none;
+    color: white;
+}
+#mainContent {
+    padding-bottom: 20px;
+    background-color: #F9F9F9;
+}
+#mainContent h2 {
+    padding-top: 20px;
+    text-align: center;
+    font-family: Geneva, Tahoma, Verdana, sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+#mainContent p,
+ul {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+#mainContent #booking {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+#mainContent #room {
+    padding-left: 30%;
+}
+#mainContent #durationDates {
+    padding-left: 20%;
+    padding-bottom: 20%;
+}
+#mainContent #spacing {
+    padding-bottom: 50px;
+}
+#mainContent #selectRoom {
+    padding-top: 30px;
+}
+#confirmedBookings {
+    padding-top: 20px;
+    width: 50%;
+    margin: 0px auto 0px auto;
+}
+#durationDates,
+#adminSearch {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#adminSearchBorder {
+    border: 2px groove;
+    margin-right: 600px;
+}
+#dates,
+#selectRoom {
+    border: 0;
+    margin: 0px auto;
+}
+label {
+    display: inline-block;
+    width: 150px;
+}
+.bump {
+    margin-left: 10px;
+}
+input {
+    width: 150px;
+    padding-right: 30px;
+}
+select {
+    width: 190px;
+}
+#footer {
+    font-family: "proxima-nova", Arial, "Lucida Grande", sans-serif;
+    background-color: #454347;
+    color: #CCCCDD;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}

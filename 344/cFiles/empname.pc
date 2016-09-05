@@ -1,0 +1,187 @@
+/* empname.pc
+ * Prompts the user for the initial
+ * letter of an employee's first name
+ * then queries the employee
+ * table for the employee's first and
+ * last name, and department number.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sqlca.h>
+
+#include "getresponse.c"
+
+/* Constant definitions */
+
+#define NAME_LEN   20
+#define USER_LEN   20
+#define PWD_LEN    20
+
+/* Return codes for SQL */
+
+#define SUCCESS        0
+#define NOT_LOGGED_IN -1017
+#define NOT_FOUND      1403
+
+/* Define host variables */
+
+EXEC SQL BEGIN DECLARE SECTION;
+
+  varchar  username[USER_LEN];
+  varchar  password[PWD_LEN];
+  varchar  h_letter[NAME_LEN];
+
+  typedef struct {
+    varchar  fname[NAME_LEN];
+    varchar  lname[NAME_LEN];
+    int      dno;
+  } h_rec_type;
+
+  h_rec_type h_rec;
+
+EXEC SQL END DECLARE SECTION;
+
+/* Global variables */
+
+char letter[2];
+
+/* Function prototypes */
+
+void connect_to_oracle (void);
+void sql_error (char *msg);
+
+int main() {
+
+  /* Connect to Oracle */
+
+  connect_to_oracle();
+
+  /* Prompt for the initial letter
+   * of an employee's first name
+   * and put it into a host variable.
+   */
+
+  printf("\nEnter the initial letter of a first name: ");
+  getresponse(letter, sizeof(letter), stdin);
+  strcpy((char *) h_letter.arr, letter);
+  strcat((char *) h_letter.arr, "%");
+  h_letter.len = 2;
+
+  /* Print a heading */
+
+  printf("\n\nFNAME            LNAME            DNO\n");
+  printf(    "---------------  ---------------  ------\n");
+
+
+  /* Declare a cursor to get
+   * data from Oracle.
+   */
+
+  EXEC SQL
+    DECLARE emp_cursor CURSOR FOR
+    SELECT fname, lname, dno
+      FROM employee
+      WHERE fname LIKE :h_letter;
+
+  EXEC SQL OPEN emp_cursor;
+
+  for ( ; ; ) {
+
+    /* There is a 1:1 correspondence 
+     * baetween the positions of the
+     * SELECT fields in the cursor
+     * declaration and the struct
+     * fields.
+     */
+
+    EXEC SQL FETCH emp_cursor INTO :h_rec;
+
+    if (NOT_FOUND == sqlca.sqlcode) {
+      break;
+    } else if (SUCCESS == sqlca.sqlcode) {
+
+      h_rec.fname.arr[h_rec.fname.len] = '\0';
+      h_rec.lname.arr[h_rec.lname.len] = '\0';
+
+      printf("%-15s  %-15s  %-6d\n",
+	   h_rec.fname.arr, h_rec.lname.arr, h_rec.dno);
+
+    } else {
+      sql_error("Error retrieving data");
+    }
+  }     /*END OF for ( ; ; ) */
+
+  printf("\n");
+
+  /* Close the cursor. */
+
+  EXEC SQL CLOSE emp_cursor;
+
+  /* Disconnect from ORACLE */
+
+  EXEC SQL COMMIT WORK RELEASE;
+
+  return(0);
+}
+
+void connect_to_oracle (void) {
+
+  FILE *passfile;
+
+  /* Open pass.dat.  If not successful, print
+   * an error messge and exit. 
+   */
+
+  if (0 == (passfile = fopen("pass.dat", "r"))) {
+    printf("Cannot open pass.dat\n");
+    printf("Program exiting\n");
+    exit(-1);
+  }
+
+  /* Read the data from the file
+   * and terminate the varchar strings.
+   */
+
+  getresponse((char *)username.arr, sizeof(username.arr), passfile);
+  username.len = strlen((char *) username.arr);
+  getresponse((char *)password.arr, sizeof(password.arr), passfile);
+  password.len = strlen((char *) password.arr);
+
+  /* Close the file. */
+
+  fclose(passfile);
+
+  /* Connect to Oracle and check for errors. */
+
+  printf("\nConnecting to ORACLE\n");
+
+  EXEC SQL CONNECT :username IDENTIFIED BY :password;
+
+  if (NOT_LOGGED_IN == sqlca.sqlcode) {
+    printf("  Not connected\n");
+    exit(1);
+  } else if (SUCCESS == sqlca.sqlcode) {
+    printf("  Connected to ORACLE\n");
+  } else {
+    sql_error("Error logging into Oracle");
+  }
+  return;
+}
+
+void sql_error (char *msg) {
+
+  char err_msg[200];
+  size_t buf_len, msg_len;
+
+  printf("\n%s\n", msg);
+  buf_len = sizeof(err_msg);
+  sqlglm(err_msg, &buf_len, &msg_len);
+  printf("%.*s\n", msg_len, err_msg);
+  EXEC SQL ROLLBACK RELEASE;
+  exit(1);
+}
+
+

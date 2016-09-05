@@ -1,0 +1,26 @@
+244COSC242
+
+1)There are two ways to create a new thread of execution. One is to declare
+a class to be a subclass of Thread. This subclass should override the run
+method of class Thread. An instance of the subclass can then be allocated and
+started. The other way to create a thread is to declare a class that
+implements the Runnable interface. That class then implements the run method.
+An instance of the class can then be allocated, passed as an argument when
+creating Thread, and started.
+
+2)run()
+
+3)start()
+
+4)36 to 46
+
+5)14 is using ReadWriteThread to get the outputStream of the socket
+with input being System.in and then using the start() method to start it.
+15 is doing is similar but getting the socket inputStream and then starting it,  and output is the console.
+
+6)No, becasue threads run at the same time.
+
+7)look at the class
+
+8)because of the timer.
+Threads being interrupted mid-way through printing.

@@ -1,0 +1,3 @@
+gcc -W -Wall -O2 -ansi -pedantic -g first-program.c -o print-nums
+
+./print-nums

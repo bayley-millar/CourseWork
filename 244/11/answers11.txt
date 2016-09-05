@@ -1,0 +1,15 @@
+1.the send method sends who the sender is and then sends the line aswell all to the
+client.
+
+2.Going to the output.
+
+3.returns ID as a String
+
+4.Not recycled cause it only has a counter that increments up
+
+5. 13, 21-24
+
+6. 13
+
+7.clients have an input and output thread and a main server thread, the main server has
+three threads connectin to each client and the main server has main thread and its 13.

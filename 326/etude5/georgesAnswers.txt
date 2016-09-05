@@ -1,0 +1,156 @@
+Etude 5 Report
+
+Q1) When trying x = 2000000000, this results in an output of -147483648 rather
+    than x. This is because x exceeds the max limit of an integer to be divided.
+    You would need to make this a long variable instead of an int.
+Q2) This gives the correct result as this new method returns the input int plus
+    a much smaller division rather than trying to divide such larger numbers.
+Q3) This does not work here as definition two uses the div method. The div()
+    method returns the largest int with remainders. So for example for (2,1)
+    and (1,2) we have 1+div(-1,2).quot = 1 + 0 = 1 and 2 + div(1,2).quot =
+    2 + 0 = 2 which is different.
+Q4) Definition 3 works as it makes the calculation independent of which
+    argument comes first. One for when x <=y and one for when x > y.
+Q5) The first definition presents the correct answer. The second and third
+    definition give -21478368 which is as far from correct possible when
+    talking about 32-bit integers. This is because the sum if INT_MAX*2 wraps
+    around to give -1 then INT_MAX is taken away from this too.
+Q6) We can't have any confidence in any integer calculation without formal
+    verification or testing as there is no credibility to the methods.
+    We should use "safe" languages like python and perl6 when we need the
+    make sure the answer is correct. It's important that the answer is
+    obtained quickly and proved through testing. An "unsafe" language may be
+    used when a numerical answer giving the wrong result is not the cause for
+    concern but extensive testing should stll be undergone in this scenario too.
+    Q7) Output:  0 0.000000e+00
+                 1 0.000000e+00
+                 2 0.000000e+00
+                 3 0.000000e+00
+                 4 0.000000e+00
+                 5 0.000000e+00
+                 6 0.000000e+00
+                 7 0.000000e+00
+                 8 0.000000e+00
+                 9 0.000000e+00
+                 10 0.000000e+00
+                 11 0.000000e+00
+                 12 0.000000e+00
+                 13 0.000000e+00
+                 14 0.000000e+00
+                 15 1.073742e-07
+                 16 0.000000e+00
+                 17 0.000000e+00
+                 18 0.000000e+00
+                 19 inf
+    Iteration i = 15 gives a small non-zero result and iteration i = 19 results
+    in infinity. When i = 19, this gives infinity because the input into hyp()
+    overflows and exceeds the max floating point. For i = 15, this non-zero
+    result is given because of a roundoff error when taking 10^15*10^15.
+    Q8) Output: 0 0.000000e+00
+                1 0.000000e+00
+                2 0.000000e+00
+                3 0.000000e+00
+                4 0.000000e+00
+                5 7.275958e-08
+                6 9.094948e-08
+                7 1.136869e-07
+                8 1.421086e-07
+                9 0.000000e+00
+                10 1.110223e-07
+                11 1.387779e-07
+                12 8.673618e-08
+                13 1.084202e-07
+                14 6.776264e-08
+                15 8.470330e-08
+                16 1.058791e-07
+                17 6.617446e-08
+                18 8.271807e-08
+                19 1.033976e-07
+                20 1.292470e-07
+                21 1.138989e-05
+                22 1.138383e-03
+                23 5.879122e-02
+                24 1.000000e+00
+    After the 5th iteration, roundoff errors start to occur. After this,
+    rounding errors occur due to the fact that 0.1 can not be exactly
+    represented as a floating point number. We also have that, as we get to
+    the end of the range, we are presented with subnormal numbers having
+    reduced precision, leading to incorrect results. Right at the end of this,
+    we hace the squared numbers becoming zero giving a result with no correct
+    numbers in it.
+    Q9) Output 1: 0 0.000000e+00
+                  1 0.000000e+00
+                  2 0.000000e+00
+                  3 0.000000e+00
+                  4 0.000000e+00
+                  5 0.000000e+00
+                  6 0.000000e+00
+                  7 0.000000e+00
+                  8 0.000000e+00
+                  9 0.000000e+00
+                  10 0.000000e+00
+                  11 0.000000e+00
+                  12 0.000000e+00
+                  13 0.000000e+00
+                  14 0.000000e+00
+                  15 0.000000e+00
+                  16 0.000000e+00
+                  17 0.000000e+00
+                  18 0.000000e+00
+                  19 0.000000e+00
+        Output 2: 0 0.000000e+00
+                  1 0.000000e+00
+                  2 7.450581e-08
+                  3 0.000000e+00
+                  4 1.164153e-07
+                  5 7.275958e-08
+                  6 9.094948e-08
+                  7 1.136869e-07
+                  8 1.421086e-07
+                  9 8.881785e-08
+                  10 1.110223e-07
+                  11 1.387779e-07
+                  12 8.673618e-08
+                  13 1.084202e-07
+                  14 6.776264e-08
+                  15 8.470330e-08
+                  16 1.058791e-07
+                  17 1.323489e-07
+                  18 1.654361e-07
+                  19 1.033976e-07
+    The first output is for the increasing case and presents the correct
+    answer as all results give 0. The second output is the decreasing case
+    and gives a closer result overall but operates worse over the first five
+    values. So this result is overall an improved method giving obvious
+    closer results on the whole.
+Q10)Output:  0 0.433013
+             1 4.99375
+             2 49.9994
+             3 500
+             4 5000
+             5 50000
+             6 500000
+             7 0
+             8 0
+             9 0
+             10 0
+             11 0
+             12 0
+             13 0
+             14 0
+             15 0
+             16 0
+             17 0
+             18 0
+             19 0
+       Code: int main(void) {
+                 float c = 1.0f, a = 1.0f;
+                 for (int i = 0; i < 20; i++) {
+                     printf("%2d %g\n", i, heron_area(a, c));
+                     a *= 10.0f;
+                     }
+             return 0;
+             }        
+    The case where heron_ht catastrophically fails is when i = 7. This occurs
+    because of the catastrpohic cancellation. The square root here gives a
+    zero result so all results after this one are also 0 as well.

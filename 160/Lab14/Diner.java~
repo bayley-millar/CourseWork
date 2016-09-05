@@ -1,0 +1,43 @@
+/**  
+ * Diner.java
+ * Lab 14 2014
+ * Bayley Millar
+ */ 
+
+import java.awt.*;
+
+public class Diner{
+  
+  private int x;
+  private int y;
+  private String name;
+  private int seatNum;
+  private Color colour;
+  final int DIAMETER = 50;
+ 
+  /* Sets up circle with the specified values */
+  public Diner(int getx, int gety, String getName, int num, Color getColour){
+    colour = getColour;
+    name = getName;
+    seatNum = num;
+    x = getx;
+    y = gety;
+    
+  }
+  
+  /* Draws circle in the specified graphics context */
+  public void draw(Graphics g)
+  {
+    g.setColor (colour);
+    g.fillOval(x, y, DIAMETER, DIAMETER); // Draws Circle in relative place
+    
+    g.setColor (Color.black);
+    g.setFont(new Font("Arial", Font.PLAIN, 16)); // Draws name in relative place
+    g.drawString(name, x+8, y+35);
+    
+    
+    g.setFont(new Font("Arial", Font.PLAIN, 14)); // Draws seat number
+    g.drawString(Integer.toString(seatNum), x+22, y+14);
+    
+  }
+}

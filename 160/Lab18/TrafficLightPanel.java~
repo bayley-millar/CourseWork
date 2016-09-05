@@ -1,0 +1,61 @@
+/** TrafficLightPanel.java
+  * Lab 18, 2014
+  * Bayley Millar
+  */
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+
+public class TrafficLightPanel extends JPanel{
+  
+  private JButton redButton;
+  private JButton greenButton;
+  private JButton amberButton;
+  private JLabel buttonLabel;
+  private JLabel lastPressedLabel;
+  private JPanel buttonPanel;
+  
+  public TrafficLightPanel(){
+   redButton = new JButton("Red");
+   greenButton = new JButton("Green");
+   amberButton = new JButton("Amber");
+   
+   ButtonListener listener = new ButtonListener();
+   red.addActionListener(listener);
+   green.addActionListener(listener);
+   amber.addActionListener(listener);
+   
+   buttonLabel = new JLabel("Button Panel");
+   lastPressedLabel = new JLabel("last pressed");
+   
+   buttonPanel = new JPanel();
+   buttonPanel.setPreferredSize(new Dimension(80, 290));
+   buttonPanel.setBackground(Color.white);
+   buttonPanel.add(buttonLabel);
+   buttonPanel.add(redButton);
+   buttonPanel.add(greenButton);
+   buttonPanel.add(amberButton);
+   buttonPanel.add(lastPressedLabel);
+   
+   setPreferredSize(new Dimension(200, 300));
+   setBackground(Color.blue);
+   add(buttonPanel);
+   
+   
+  }
+  
+  
+  private class ButtonListener implements ActionListener{
+      public void actionPerformed (ActionEvent e){
+        if (e.getSource() == redButton)
+          label
+    }
+    
+    
+    
+  }
+  
+  
+  
+}

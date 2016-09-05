@@ -1,0 +1,112 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\froman\fcharset0 Times-Roman;
+\f3\fnil\fcharset0 LucidaGrande;\f4\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red28\green28\blue28;\red255\green255\blue255;
+\red26\green26\blue26;\red0\green0\blue0;\red38\green38\blue38;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{circle\}}{\leveltext\leveltemplateid2\'01\uc0\u9702 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Bayley Millar\
+2940325\
+\
+
+\b\fs48 Lab 8\
+
+\b0\fs28 \
+
+\b 2.Random walk:\
+
+\b0 (a): make and initial guess if the parameter values, generate random update and compute the costs, if the cost is lower, we keep the update, if not we generate a new random update.\
+\
+(b):it is slow and you cannot guarantee where it will be/go\
+\
+
+\b 3.Steepest gradient descent:\
+
+\b0 (a):\
+\pard\pardeftab720\sl364\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 currentNode = startNode;\
+   loop do\
+      L = NEIGHBORS(currentNode);\
+      nextEval = -INF;\
+      nextNode = NULL;\
+      for all x in L \
+         if (EVAL(x) > nextEval)\
+              nextNode = x;\
+              nextEval = EVAL(x);\
+      if nextEval <= EVAL(currentNode)\
+         //Return current node since no better neighbors exist\
+         return currentNode;\
+      currentNode = nextNode;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+(b): Steepest gradient is good for finding a local optimums but not global optimums\
+\
+
+\b 4.Simulated anneling search:\
+
+\f2\b0 (a):\cf3 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Simulated annealing interprets slow cooling as a slow decrease in the probability of accepting worse solutions as it explores the solution space. Accepting worse solutions is a fundamental property of metaheuristics because it allows for a more extensive search for the optimal solution.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl500\sa180\partightenfactor0
+\ls1\ilvl0\cf5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 First, generate a random solution\cb1 \
+\ls1\ilvl0\cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Calculate its cost using some cost function you've defined\cb1 \
+\ls1\ilvl0\cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Generate a random neighboring solution\cb1 \
+\ls1\ilvl0\cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Calculate the new solution's cost\cb1 \
+\ls1\ilvl0\cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Compare them:\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl380\sa180\partightenfactor0
+\ls1\ilvl1\cf5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f3 \uc0\u9702 
+\f2 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 If c\sub new\nosupersub  < c\sub old\nosupersub : move to the new solution\cb1 \
+\ls1\ilvl1\cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f3 \uc0\u9702 
+\f2 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 If c\sub new\nosupersub  > c\sub old\nosupersub : 
+\i maybe
+\i0  move to the new solution\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl500\sa180\partightenfactor0
+\ls1\ilvl0\cf5 \cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	6.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Repeat steps 3-5 above until an acceptable solution is found or you reach some maximum number of iterations.\cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+
+\f0 (b):The simulated annealing algorithm should be able to maximize or minimize something in theory.\
+\
+\
+
+\b 5.genetic algorithms:\
+
+\f2\b0 (a):\cf6 	\
+   \'95	\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Individuals in a population compete for resources and mates.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl340\partightenfactor0
+\ls2\ilvl0\cf6 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Those individuals most successful in each 'competition' will produce more offspring than those individuals that perform poorly.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Genes from \'91good' individuals propagate throughout the population so that two good parents will sometimes produce offspring that are better than either parent.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Thus each successive generation will become more suited to their environment.\cf4 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+(b):\
+\
+Two individuals are chosen from the population. A crossover site is chosen randomly. The values of the two strings are exchanged. Select half of one individual and half of the other. Then with some low probability, introduce a mutation in the child by for example flipping bits.\
+\
+(c):\
+
+\f4 \cf7 \cb4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 Elitism involves copying a small proportion of the fittest candidates, unchanged, into the next generation. Good having the species kept strong. Drawback is that it can have a significant impact on performance.}

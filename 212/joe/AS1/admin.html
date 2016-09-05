@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+
+<head>
+    <title>Rise Resort | Hotel</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="viewBookings.js"></script>
+    <script src="bookingValidation.js"></script>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="page">
+        <div id="header">
+            <h1>RISE RESORT</h1>
+            <p>"The best hotel in the word"</p>
+            <div id="nav">
+                <ul>
+                    <li>Staff Administration</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="mainContent">
+            <h2>Current Bookings</h2>
+            <form id="adminSearch">
+                <fieldset id="adminSearchBorder">
+                    <legend>Search Bookings</legend>
+                    <label class="admin">Room Number:</label>
+                    <input type="text" name="number" id="roomNO" placeholder='Room Number'>
+                    <br>
+                    <label>Guest Name:</label>
+                    <input type="text" name="guest" id="guestName" placeholder='Guest Name'>
+                    <input type="button" value="Reset" id="resetSearch">
+                </fieldset>
+            </form>
+            <div id="confirmedBookings">
+                <ul id="bookings"></ul>
+            </div>
+
+        </div>
+        <div id="footer">
+
+            Designed by Joe Benn &copy; 2015 Rise Resort
+
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+Lab 6 lab preperation answers.
+1)^
+2)A FileInputStream obtains input bytes from a file in a file system.
+What files are available depends on the host environment.
+FileInputStream is meant for reading streams of raw bytes such as image data.
+For reading streams of characters, consider using FileReader
+3)FileInputStream fis = new FileInputStream(file);
+4)read(); it returns the next byte of data or -1 if the end of the file is
+reached.
+5)A file output stream is an output stream for writing data to a File or to a
+FileDescriptor. FileOutputStream is meant for writing streams of raw bytes
+such as image data.
+6)f = new FileOuputStream(file);
+7)public void write(int b)
+8)close()  (or maybe finalize())
+9)
+
+public class PrintWords{
+
+public static void main(String[] args){
+       String word = args[0];
+       int n = Interger.parseInt[args[0]);
+       print_words(word, n);
+
+public void print_words(String word, int n){
+       int count = 0;
+       while(count <= n){
+         System.out.println(word);
+         count++;
+       }
+   }
+}
+    
+

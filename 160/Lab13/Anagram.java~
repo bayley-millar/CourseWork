@@ -1,0 +1,21 @@
+/** Anagram class
+  * Lab 13 COMP160
+  * Bayley Millar
+  */
+
+import java.util.Scanner;
+public class Anagram{
+ 
+  public static void main(String[]args){
+    Scanner scan = new Scanner(System.in);
+    String phrase = scan.nextLine();
+    phrase = phrase.toLowerCase();
+    String newString = "";
+    int index = 0;
+    for(char alphabet = 'a'; alphabet <= 'z';alphabet++) {
+       
+    }
+  }
+  
+  
+}

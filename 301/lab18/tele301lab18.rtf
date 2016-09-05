@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red28\green28\blue28;\red10\green0\blue109;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 TELE301 lab 18\
+\
+
+\f1\b0 2. 
+\f0 \cf2 \expnd0\expndtw0\kerning0
+ Split horizon is used for avoid routing loops by preventing the routing path to be sent/adverstised back to the node from which the advertising router has received it. The reason there are missing advertisements is because R1 knows about its own routes and does not need to advertise other routes because the other routers will know about them. E.G R1 advertises 1.1 and 1.2 but not the others because R2 can advertise routes 3.1 and 5.1 \cf0 \kerning1\expnd0\expndtw0 \
+\
+3. \cf2 \expnd0\expndtw0\kerning0
+Split-horizon routing with poison reverse
+\fs22 \cf3 \super  
+\fs28 \cf2 \nosupersub is a variant of split-horizon route advertising in which a router actively advertises routes as unreachable over the interface over which they were learned by setting the route metric to infinite (16 for RIP). The effect of such an announcement is to immediately remove most looping routes before they can propagate through the network.\cf0 \kerning1\expnd0\expndtw0 \
+\
+5.\
+-Connection was good at 03:24:44 dropped adapter straight after this\
+-Connection went stale at 03:25:00\
+-Came back at 03:25:32 \
+-NOTE: Clocks were not synchronized (can prove with screen shot)\
+\
+-Fail-over was roughly 40 seconds\
+-Fail-back took 32 seconds roughly\
+\
+6.\
+-connection disconnected at 0:55:21\
+-discovered at 00:55:42\
+-connection remade at 00:55:46\
+-Discovered reconnection at 00:56:12\
+\
+-The R prefixes are removed\
+\
+7.\
+-1:36:17 rip deleted\
+-discovers at 01:36:29\
+\
+-Rip set back at 1:39:23\
+-rediscovered at 01:39:48\
+fail-back took: 25secs\
+\
+The connection still worked and i believe it took a different route.\
+\
+}

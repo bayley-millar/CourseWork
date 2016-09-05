@@ -1,0 +1,15 @@
+1.getLocalPort():the local port number to which this socket is
+bound or -1 if the socket is not bound yet.
+
+2.Inet:the remote IP address to which this socket is connected,
+or null if the socket is not connected.
+
+3.getPort():the remote port number to which this socket is connected,
+or 0 if the socket is not connected yet.
+
+4.the new statement will return the return values of the methods mentioned in
+questions above
+
+5.-printing the  remote IP address to which this socket is connected
+  -printing the remote port number to which this socket is connected
+  -printing the the local port number to which this socket is bound

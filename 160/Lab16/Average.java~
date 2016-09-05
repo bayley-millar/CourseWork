@@ -1,0 +1,25 @@
+/*Average.java, part 3
+ *COMP 160, Lab 16, 2014
+ * Bayley Millar
+ */
+public class Average{
+  public static void main(String[]args){
+    int [] [] table = {{ 1,2,3},{4,5,6},{7,8}};
+
+    
+    for( int [] x: table){ // For every array within the array table
+
+     int sum =0; // Resets the sum back to 0 every time through the outer loop
+    
+      for(int val:x){ // For every value in the inner array
+        sum = sum+ val; // Update the sum
+        
+       System.out.print(val + " ");
+      } 
+      
+      System.out.println("\t Average:" + ((double)sum / x.length));
+  
+    }
+    
+  }
+}

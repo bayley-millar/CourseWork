@@ -1,0 +1,34 @@
+/**Counter.java
+ * bayley millar
+ * Lab 01, COSC 241
+ */
+package week01;
+
+import java.util.*;
+
+public class Counter{
+
+    public static void main(String[]args){
+        int lines = 0;
+        int words = 0;
+        Scanner scan = new Scanner(System.in);
+
+        while(scan.hasNextLine()){
+            String str = scan.nextLine();
+            Scanner scline = new Scanner(str);
+            lines++;
+
+            while(scline.hasNext()){
+                String word = scline.next();
+                words++;
+            }
+        }
+        
+        System.out.println("lines: " + lines);
+        System.out.println("words: " + words);
+
+
+
+
+    }
+}//end class

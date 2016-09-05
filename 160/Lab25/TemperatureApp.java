@@ -1,0 +1,17 @@
+/** TemperatureApp.java
+  * Lab 25, 2014
+  * Bayley Millar
+  */
+
+import javax.swing.JFrame;
+/**App class will create JFrame and call the TemperatureApp.java class*/
+public class TemperatureApp{
+  /**Main class*/
+  public static void main (String[]args){
+   JFrame frame = new JFrame("TemperatureApp");
+   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+   frame.getContentPane().add(new TempConverter());
+   frame.pack();
+   frame.setVisible(true);
+  }
+}

@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+/*defining size of array*/
+#define ARRAY_MAX 10000
+
+/*insertion sort function which is called upon in main*/
+void insertion_sort(char **a, int n){
+    /*variable declaration*/
+    int i, j;
+    char *key;
+    /*for and while loops to run through each i and move it appropriately*/
+    for(i=1; i<n;i++){
+        key = a[i];
+        j=i-1;
+        /*while loop which runs back down to all values less than j*/
+        while(strcmp(key,a[j])< 0 && j>=0){
+            a[j+1]=a[j];
+            --j;
+        }
+        a[j+1]=key;
+    }/*exiting the for and while loop*/
+}
+
+/*main function which declares variables and runs insertion sort*/
+int main(void){
+    int my_array[ARRAY_MAX];
+    clock_t start, end;
+    int i, count = 0;
+    /*while loop to check for count and if there is more input*/
+    while(count<ARRAY_MAX && 1 == scanf("%d", &my_array[count])){
+        wordlist[num_words] = emalloc((strlen(word) + 1) * sizeof wordlist[0][0]);
+        strcpy(wordlist[num_words], word);
+        count++;
+    }
+    /*starting the clock and call the insertion sort method*/
+    start = clock();
+    insertion_sort(my_array, count);
+    end = clock();
+    /*runs through the array and prints out ordered values*/
+    for(i=0; i<count; i++){
+        printf("%d\n", my_array[i]);
+    }
+    fprintf(stderr,"%d %f\n", count, (end-start) / (double)CLOCKS_PER_SEC);
+    return EXIT_SUCCESS; /*exiting the loop*/
+}

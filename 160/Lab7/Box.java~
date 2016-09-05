@@ -1,0 +1,4 @@
+/*
+ * Box support class
+ * Lab 7 COMP160 2014
+ * Calculates the volume and surface area of a box given its height, length and width.

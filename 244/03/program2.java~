@@ -1,0 +1,23 @@
+/**Program2.java
+ *Bayley Millar
+ */
+import java.io.*;
+
+public class Program1{
+
+    public void stream(){
+        int b;
+        try{
+            InputStream in = System.in;
+            OutputStream out = System.out;
+            while(b <= 0){
+                b = in.read();
+                write(b);
+            }
+        
+
+        }catch(IOException e){
+            System.out.println("error: IOException");
+        }
+    }
+}

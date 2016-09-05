@@ -1,0 +1,27 @@
+Q2= the reason the output was hello is becuase the last assignment of
+x was hello so python will use the last assignment.
+
+Q3=
+my prediction:
+fish and chips
+chips and fish
+chips and fish
+fish and chips
+chips and fish
+123
+321
+6
+6
+
+What is was:
+fish and chips
+chips and fish
+chips and fish
+fishandchips
+chipsandchips
+1 2 3
+3 2 1
+6
+8
+
+

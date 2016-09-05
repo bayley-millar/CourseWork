@@ -1,0 +1,128 @@
+public class TableauApp1.java{
+
+    public static boolean rowLengthsDecrease( int [][] t){
+        boolean isDecreasing = false;
+        boolean everNot = false;
+        for(int i = 1; i < t.length; i++){
+            if(t[i].length < t[i-1].length){
+                isDecreasing = true;
+            } else {
+                everNot = true;
+            }
+            if(everNot){
+                isDecreasing = false;
+            }
+        }
+        return isDecreasing;
+    }
+
+    public static boolean rowValuesIncrease(int [][] t){
+        boolean isIncreasing = false;
+        boolean everNot = false;
+        for(int i = 0; i < t.length; i++){
+            for(int j = 1; j < t.[i]length; j++){
+                if(t[i][j] > t[i][j-1]){
+                    isIncreasing = true;
+                } else {
+                    everNot = true;
+                }
+                if(everNot){
+                    isIncreasing = false;
+                }
+            }
+        }
+        return isIncreasing;
+    }
+
+    public static boolean columnValuesIncrease(int [][] t){
+        boolean isIncreasing = false;
+        boolean everNot = false;
+        for(int i = 1; i < t.length; i++){
+            for(int j = 0; j < t[i].length; j++){
+                if(t[i][j] > t[i-1][j]){
+                    isIncreasing = true;
+                } else {
+                    everNot = true;
+                }
+                if(everNot){
+                    isIncreasing = false;
+                }
+            }
+        }
+        return isIncreasing;
+    }
+
+    public static boolean isSetOf1toN(int [][] t){
+        boolean setOfN = false;
+        int sum = 0;
+        int count = 0;
+        for(int i = 0; i < t.length; i++){
+            for(int j = 0; j < t[i].length; j++){
+                count++;
+                sum += count;
+                sum -= t[i][j];
+            }
+        }
+        if(sum == 0){
+            setOfN = true;
+        }
+        return setOfN;
+    }
+
+
+
+    public int size(){
+        int count = 1;
+        if(rootValue != null){
+            for(Tree<T> child : children){
+                count += child.size();
+            } return count;
+        } else {
+            return 0;
+        }
+        
+    }
+
+    public int maxDegree(){
+        int maxCount = children.size();
+        for(Tree<T> child : children){
+            if(child.maxDegree() > maxCount){
+                maxCount = child.maxDegree();
+            }
+        }
+        return maxCount;
+    }
+
+    public List<T> postOrder(){
+        ArrayList<T> result = new ArrayList<T>();
+        for(Tree<T> child : children){
+            result.addAll(child.postOrder());
+        }
+        result.add(rootValue);
+        return result;
+    }
+
+    public String toIndentedString(){
+        StringBuilder result = new StringBuilder(rootValue.toString());
+        for(Tree<T> child : children){
+            result.append("\n");
+            result.append(child.toIndentedString("  "));
+        }
+        result.append("\n");
+        return result.toString();
+    }
+
+    public String toIndentedString(String indent){
+        StringBuilder result = new StringBuilder(indent + rootValue.toString());
+        for(Tree<T> child : children){
+            result.append("\n");
+            result.append(child.toIndentedString(indent + "  "));
+        }
+        
+        return result.toString();
+    }
+    
+
+       
+
+    

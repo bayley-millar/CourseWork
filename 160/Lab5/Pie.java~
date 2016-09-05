@@ -1,0 +1,26 @@
+/**
+ Pie.java
+ Provided for Part 2, Lab5, COMP160 2014
+ 
+ */
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Pie extends JFrame{
+    
+    /**creates  an instance of Pie called chart1*/
+    public static void main(String[]args){
+        Pie chart1 = new Pie(); 
+        chart1.setSize(300,220);
+        chart1.setVisible(true);
+    }
+    
+    /**all drawing code goes in the paint method, which is called automatically*/
+    public void paint (Graphics page){
+        page.setColor(Color.white);
+        page.fillRect(0,0,300,220);
+        //your pie chart code goes here
+        
+    }
+}

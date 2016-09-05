@@ -1,0 +1,5 @@
+/**
+ * RandomRange.java
+ * Lab 8, Part 2, COMP160  2014
+ * Contains a single method which returns random integer between high and low parameters.
+ */

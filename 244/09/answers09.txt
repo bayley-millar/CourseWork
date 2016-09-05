@@ -1,0 +1,30 @@
+1.it is used as a strategy for preventing thread interference.
+
+2.15
+
+3.starts executing at 32 onwards
+
+4.ChatServer started
+
+5.Accepted connection from client_1
+
+6.Welcome! You are client_1
+
+7.Accepted connection from client_2
+
+8.Welcome! You are client_2.
+
+9.client_1: hello from client 1
+
+10.client_1: hello from client 1
+
+11.Sending ’hello from client 1’ to : [client_1, client_2, client_3]
+client_1: hello from client 1
+
+12.client_3 closed connection!
+
+13: client_1: Hello again
+
+14: Sending ’Hello again’ to : [client_1, client_2]
+
+15: Client 4

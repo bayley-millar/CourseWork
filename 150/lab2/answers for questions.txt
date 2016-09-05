@@ -1,0 +1,11 @@
+what are the variables used for?
+variables are used to store integers or strings in it
+
+What can follw the print keyword?
+strings, integers and floats
+
+8.what happened with the last example? why?
+The reason I believe is that the question of 7%0 is impossible to answer because
+in maths it is impossible to divide by zero
+
+

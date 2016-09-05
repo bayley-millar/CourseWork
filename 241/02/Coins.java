@@ -1,0 +1,104 @@
+/**Coins.java
+ * Bayley Millar
+ * Lab02, cosc 241
+ */
+package week02;
+import java.util.Random;
+/**The program reteurns the outcomes of a coin flip.
+ *@author Bayley Millar
+ */
+public class Coins{
+    /**Boolean data field makes heads true.*/
+    public static final boolean HEADS = true;
+    /**Boolean data field makes the TAILS false.*/
+    public static final boolean TAILS = false;
+    /**boolean data field create coins array.*/
+    private boolean[] coins;
+  
+    /**main method initialises and calls the methods.
+     * @param args command lines are not used
+     */
+    public static void main(String[] args){
+        boolean[] b = {HEADS, TAILS, HEADS, HEADS, TAILS};
+        Coins c = new Coins(b);
+        Coins d = new Coins(b);
+        System.out.println(c.countHeads());
+        System.out.println(d.toString());
+    }
+    /**Constructor to the array coins.
+     * @param coins variable is the name of the array.
+     */
+    public Coins(boolean[] coins){
+        this.coins = coins;
+    }
+    /**method is used to find the number of heads found.
+     *@return The value is the count of headds.
+     */
+    public int countHeads(){
+        int count = 0;
+        for(int index=0; index < coins.length; index++){
+            if(coins[index]){
+                count++;
+            }
+        }
+        return count;
+    }
+    /**method is usedd to display the results from the coins toss.
+     *@return the returned output is 'T' or 'H' for heads and tails.
+     */
+    public String toString(){
+        String s = "";
+        for(int index = 0; index < coins.length; index++){
+            if(coins[index]){
+                s += "H";
+            }else{
+                s += "T";
+            }
+        }
+        return s;
+    }
+    /**Creates a coin object from a string.
+     *@param c parameter used to create coin object.
+     */
+    public Coins(String c){
+        coins = new boolean[c.length()];
+        for(int index=0; index < coins.length; index++){
+            if (c.charAt(index) == 'H'){
+                coins[index] = HEADS;
+            }else if (c.charAt(index) == 'T'){
+                coins[index] = TAILS;
+            }
+        }
+    }
+    /**Constructs a Coins object consisting of a series of random toss'.
+     *@param length int value which is the length.
+     */
+    public Coins(int length){
+        coins = new boolean[length];
+        Random r = new Random();  
+        for(int i = 0; i < coins.length; i++){
+            int num = r.nextInt(2);
+            if(num == 0){
+                coins[i] = HEADS;
+            }else if(num == 1){
+                coins[i] = TAILS;
+            }
+        }
+    }
+    /**methods returns an int which is the number of runs in a sequence
+     *of coins.
+     *@return The return value is tbe number of runs
+     */
+    public int countRuns(){
+        int runs = 1;
+        for(int index = 1; index < coins.length; index++){
+            if(coins[index-1] != coins[index]){
+                runs++;
+            }
+        }
+        return runs;
+    }
+      
+
+  
+}//end class

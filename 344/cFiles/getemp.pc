@@ -1,0 +1,80 @@
+/* getemp.pc
+ * Prompts the user for an employee
+ * ssn, then queries the employee
+ * table for the employee's first and
+ * last name, and department number.
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <sqlca.h>
+
+/* Constant definitions */
+
+#define NAME_LEN   20
+#define USER_LEN   20
+#define PWD_LEN    20
+#define SSN_LEN    10
+
+/* Define host variables */
+
+EXEC SQL BEGIN DECLARE SECTION;
+
+  varchar  username[USER_LEN];
+  varchar  password[PWD_LEN];
+  char     h_ssn[SSN_LEN];
+  varchar  h_fname[NAME_LEN];
+  varchar  h_lname[NAME_LEN];
+  int      h_dno;
+
+EXEC SQL END DECLARE SECTION;
+
+int main() {
+
+  /* Connect to Oracle */
+
+  strcpy((char *) username.arr, "SCOTT");
+  username.len = strlen((char *) username.arr);
+  strcpy((char *) password.arr, "LE0PARD");
+  password.len = strlen((char *) password.arr);
+
+  EXEC SQL CONNECT :username IDENTIFIED BY :password;
+
+  printf("\nConnected to ORACLE as user: %s\n", username.arr);
+
+  /* Well, maybe and maybe not */
+
+  /* Prompt for a ssn and put it
+   * into a host variable.
+  */
+
+  printf("\nEnter a ssn: ");
+  scanf("%s", h_ssn);
+
+  /* Get data from ORACLE */
+
+  EXEC SQL
+    SELECT fname, lname, dno
+      INTO :h_fname,:h_lname,:h_dno
+      FROM employee
+      WHERE ssn = :h_ssn;
+
+  /* Terminate the returned strings */
+
+  h_fname.arr[h_fname.len] = '\0';
+  h_lname.arr[h_lname.len] = '\0';
+
+  /* Print a heading and the data */
+
+  printf("\n\nFNAME            LNAME            DNO\n");
+  printf(    "---------------  ---------------  ------\n");
+
+  printf("%-15s  %-15s  %-6d\n",
+	 h_fname.arr, h_lname.arr, h_dno);
+
+  /* Disconnect from ORACLE */
+
+  EXEC SQL COMMIT WORK RELEASE;
+
+  return(0);
+}

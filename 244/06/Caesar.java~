@@ -1,0 +1,22 @@
+import java.util.*;
+import java.io.*;
+
+public class CaesarCipher{
+    public static void main(String[] args){
+        int shift = Integer.parseInt(args[0]);
+        try{
+            int b;
+            while(( b = System.in.read()) != -1){
+                //b = b + shift;
+                System.out.write(b);
+                System.out.flush();
+            }
+        
+            //System.out.close();
+        } catch(IOException e){
+            System.out.println("IOException: "+ e);
+        }
+    
+    }
+}
+   

@@ -1,0 +1,20 @@
+/** TrafficLightApp.java
+  * Lab 18, 2014
+  * Bayley Millar
+  */
+
+import javax.swing.JFrame;
+
+public class TrafficLightApp{
+  public static void main (String[]args){
+   JFrame frame = new JFrame("TrafficLight");
+   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+   frame.getContentPane().add(new TrafficLightPanel());
+   frame.pack();
+   frame.setVisible(true);
+  }
+  
+
+  
+  
+}

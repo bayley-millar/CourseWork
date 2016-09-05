@@ -1,0 +1,12 @@
+/**Program1.java
+ *Bayley Millar
+ */
+
+InputStream in = System.in;
+int b = in.read();
+write(b);
+OutputStream out = System.out;
+
+}catch(IOException e){
+    
+ }

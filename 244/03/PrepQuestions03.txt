@@ -1,0 +1,26 @@
+Q1:public static final InputStream in
+Q2:read()
+Q3:abstract int
+Q4:-1
+Q5:public static final PrintStream out
+Q6:write()
+Q7:int
+Q8:
+try{
+
+InputStream in = System.in;
+OutputStream out = System.out;
+int b = in.read();
+write(b);
+
+}catch(IOException e){
+
+}
+
+Q9:readLine();
+Q10:String null
+
+Q11:Scanner sc = new Scanner(System.in);
+Q12:hasNextLine()
+Q13:nextLine()
+Q14:next() hasNext()
