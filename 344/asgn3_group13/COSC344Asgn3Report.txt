@@ -1,0 +1,51 @@
+﻿344 Assignment 3 Report
+
+Program 1:
+Trigger total_appointments: This trigger is created to calculate the total appointments a car has had in the company. After a new appointment is created and a car_id is inserted or deleted the trigger is fired and the total_appointment attribute in the car table is modified depending on the condition. If the car_id is inserted the the total_appointment is incremented by 1 while if its deleted, the total_appointment is decremented by 1. This is used to monitor the amount of appointments a car has, to be used for situations like reward programs.
+ SQL commands that would cause the trigger to fire:
+
+INSERT INTO appointment VALUES
+('555555561',TO_TIMESTAMP('10-SEP-0214:10:10.123000','DD-MON-RRHH24:MI:SS.FF'),
+TO_TIMESTAMP('10-SEP-0214:10:32.123000','DD-MON-RRHH24:MI:SS.FF'),'653565654');
+
+UPDATE appointment SET car_id=656565656 WHERE car_id =653565654;
+
+Trigger accountbalance: This trigger is created to update the customers balance. It is triggered when inserting, updating or deleting the amount attribute on transactions to calculate the balance in the account associated with the same account_id. If a new amount is inserted then it is added onto the balance. If the amount is updated then it adds the new, updated amount and subtracts the old amount value. Finally, if the amount is deleted then the balance subtracts the previous value from the balance. This trigger is used to automatically change the balance that the customer has from payment and be able to monitor the correct payment has been made between customer and company.
+SQL commands that would cause the trigger to fire:
+
+INSERT INTO transactions VALUES
+(TO_DATE('19-07-1995','DD-MM-YYYY'), 'CH', 1100.80, 983642315 ,'888888883');
+
+UPDATE transactions SET amount = 299.99 WHERE account_ID = 888888888;
+
+
+
+Program 2:
+To run our program:
+-First: Go to the JDBCConnection.java file found in the network directory. Open it up and add your server details where shown to. Currently the server details are logged into Bayley Millars.
+
+-Find this location: find -name "*.java" > sources.txt
+-Run the compiler:javac @sources.txt
+-In the directory “src”: java main.Main
+The result of this should be a GUI opening that looks like a menu with many buttons on it. 
+(note: alternatively if you have NetBeans on your computer, you can open the ‘AutoShop’ project and build and run it from there.
+
+The idea for our mini world program was to make a Java GUI program that resembled a simple admin data manipulation application. This program would make it so a staff member could add, view and delete appointments from this application. It would also make it so that a report could be view summarizing data and showing the results.
+
+Main Classes: 
+JDBC Connection
+Dao Database Manager
+
+Rest are for building the project
+
+Teamwork Model:
+
+For the third and final assignment we found that our group was working a lot together better together compared to the last two assignments. After getting a lower mark in assignment two, we decided to come together and plan this assignment more and start it earlier. We found that the biggest issue in our second assignment was communication, some of our work was not related to other work due to this miscommunication. Bayley took lead on this project and at the start worked on allocating the tasks to people that best fit them.
+
+Initially, after getting our results back for the second assignment, Bayley and Molly went through all the errors in the database. They together added and corrected any SQL content in the load file. This meant that by the time the group was starting to get ready for the third assignment, the SQL in the load file would’ve been mostly ready to go. 
+
+We decided to go with Ashley, Blake and Molly mainly working on the triggers for the assignment. Although they were leading with the triggers for the assignment, each trigger idea and completion was discussed with group either through a group chat or in person when we met up. This worked well as it meant that everybody in the group new the current progress and new of any changes that may of needed to be made to any other parts of the assignment.
+
+For the program which we decided to go with Java for, Reuben, Joe and Bayley would mainly work on this. This choice was made because these three had the most experience with Java and Java GUIs. Again like with the triggers, every move made was discussed with the group. So any changes made that may affect the program would be known.
+
+Overall we found that our group worked much better as a group this time round to achieve our goal. We found that improved communication between our group members allowed for better results in our assignment. 

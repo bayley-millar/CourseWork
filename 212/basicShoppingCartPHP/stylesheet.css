@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+#header  {
+    background-image: url(images/tools.jpg);
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #FFF;
+    border-bottom: 8px solid #8c8c8c;
+}
+
+
+
+#header h1 {
+    position: absolute;
+    top: 100px;
+    margin-top: 0px;
+    text-align: center;
+    font-family: "Veranda", Arial, sans-serif;
+    font-size: 80px;
+    text-transform: uppercase;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+}
+#addProducts{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+
+}
+
+
+
+#cart{
+    border: 3px solid #8c8c8c;
+    color: #4d4d4d;
+    text-align: center;
+}
+
+
+footer {
+    font-family: "proxima-nova", Arial, "Lucida Grande", sans-serif;
+    background-color: #454347;
+    color: #CCCCDD;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 100px;
+}
+
+
+
+
+
